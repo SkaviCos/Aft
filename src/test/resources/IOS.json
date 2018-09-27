@@ -1,0 +1,31 @@
+{
+  "executionDetails": {
+      "appium_js_path": "/Users/tolstov/node_modules/.bin/appium",
+      "appium_node_path": "/usr/local/bin/node"
+  },
+  "testFeed": [
+    {
+      "belongsTo": "optimus",
+      "runsOn": "any",
+      "appDir": "app",
+      "nativeApp":true,
+      "optimusDesiredCapabilities": {
+        "appiumServerCapabilities": {
+          "app": "Beta/Beta.ipa",
+          "platformName": "iOS",
+          "automationName": "XCUITest",
+          "xcodeOrgId": "J2Q9Q63R87",
+          "xcodeSigningId": "iPhone Developer",
+          "udid": "0732470e3f093d680c20d5917c50453906993b76",
+          "updatedWDABundleId": "com.facebook.WebDriverAgentRunnerMa2ter"
+        },
+        "iOSOnlyCapabilities": {
+          "launchTimeout": 300000
+        }
+      },
+      "deviceState":{
+        "captureVideo":true
+      }
+    }
+  ]
+}

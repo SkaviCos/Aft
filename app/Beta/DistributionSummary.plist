@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Beta.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>980E474411411D3C469C2EA110CBD3C4268ECBC0</string>
+				<key>dateExpires</key>
+				<string>15.03.2019</string>
+				<key>type</key>
+				<string>iOS Development</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>980E474411411D3C469C2EA110CBD3C4268ECBC0</string>
+						<key>dateExpires</key>
+						<string>15.03.2019</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>Charts.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>J2Q9Q63R87</string>
+						<key>name</key>
+						<string>Crypterium OU</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>980E474411411D3C469C2EA110CBD3C4268ECBC0</string>
+						<key>dateExpires</key>
+						<string>15.03.2019</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>FLAnimatedImage.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>J2Q9Q63R87</string>
+						<key>name</key>
+						<string>Crypterium OU</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>980E474411411D3C469C2EA110CBD3C4268ECBC0</string>
+						<key>dateExpires</key>
+						<string>15.03.2019</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>Kingfisher.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>J2Q9Q63R87</string>
+						<key>name</key>
+						<string>Crypterium OU</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>980E474411411D3C469C2EA110CBD3C4268ECBC0</string>
+						<key>dateExpires</key>
+						<string>15.03.2019</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>PhoneNumberKit.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>J2Q9Q63R87</string>
+						<key>name</key>
+						<string>Crypterium OU</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>980E474411411D3C469C2EA110CBD3C4268ECBC0</string>
+						<key>dateExpires</key>
+						<string>15.03.2019</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>RNCryptor.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>J2Q9Q63R87</string>
+						<key>name</key>
+						<string>Crypterium OU</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>980E474411411D3C469C2EA110CBD3C4268ECBC0</string>
+						<key>dateExpires</key>
+						<string>15.03.2019</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>SnapKit.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>J2Q9Q63R87</string>
+						<key>name</key>
+						<string>Crypterium OU</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>980E474411411D3C469C2EA110CBD3C4268ECBC0</string>
+						<key>dateExpires</key>
+						<string>15.03.2019</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>SocketIO.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>J2Q9Q63R87</string>
+						<key>name</key>
+						<string>Crypterium OU</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>980E474411411D3C469C2EA110CBD3C4268ECBC0</string>
+						<key>dateExpires</key>
+						<string>15.03.2019</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>Starscream.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>J2Q9Q63R87</string>
+						<key>name</key>
+						<string>Crypterium OU</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>J2Q9Q63R87.io.crypterium</string>
+				<key>aps-environment</key>
+				<string>development</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>J2Q9Q63R87</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>Beta.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>9f46851b-91cb-4bf1-a512-988b6a7d8f09</string>
+				<key>name</key>
+				<string>Beta dev</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>J2Q9Q63R87</string>
+				<key>name</key>
+				<string>Crypterium OU</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
