@@ -6,7 +6,7 @@
   },
   "testFeed":[
     {
-      "belongsTo":"optimus",
+      "belongsTo":"user",
       "runsOn": "any",
       "appDir": "app",
       "nativeApp":true,
@@ -14,7 +14,7 @@
         "appiumServerCapabilities": {
           "app": "crypt.apk",
           "platformName": "Android",
-          "automationName" : "UIAutomator"
+          "automationName" : "UIAutomator2"
         },
         "androidOnlyCapabilities": {
           "avdLaunchTimeout": 300000,

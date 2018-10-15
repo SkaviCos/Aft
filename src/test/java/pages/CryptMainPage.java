@@ -17,14 +17,14 @@ public class CryptMainPage extends BasePage {
 
 
     @FindAll({
-            @FindBy(xpath = "//android.widget.EditText[@resource-id='com.crypterium.beta:id/password']"),
-            @FindBy(xpath = "//XCUIElementTypeStaticText[@name='Login']")
+            @FindBy(xpath = "//android.widget.EditText[@resource-id='com.crypterium.beta:id/login']"),
+            @FindBy(xpath = "//XCUIElementTypeStaticText[@name='Login']/..")
     })
     private WebElement loginTextInput;
 
     @FindAll({
             @FindBy(xpath = "//android.widget.EditText[@resource-id='com.crypterium.beta:id/password']"),
-            @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Password\"]")
+            @FindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Password\"]/..")
     })
     private WebElement passwordTextInput;
 
@@ -42,14 +42,9 @@ public class CryptMainPage extends BasePage {
     }
 
     public void authorize(String login, String password) {
-        loginTextInput.click();
-        loginTextInput.sendKeys(login);
-        loginTextInput.click();
-        passwordTextInput.sendKeys(password);
-        buttonSignIn.click();
-
+        this.sendKeys(this.loginTextInput, login);
+        this.sendKeys(this.passwordTextInput, password);
+        this.buttonSignIn.click();
     }
-
-
 
 }

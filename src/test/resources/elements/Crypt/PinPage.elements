@@ -1,0 +1,16 @@
+{
+      "elements": [
+        {
+          "elementName": "Pin",
+          "identifier": "xpath",
+          "value": "//android.widget.EditText[@resource-id='com.crypterium.beta:id/pin'] | //XCUIElementTypeStaticText[@name='Enter your new PIN below']/following-sibling::XCUIElementTypeOther[1]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "PinConfirmation",
+          "identifier": "xpath",
+          "value": "//android.widget.EditText[@resource-id='com.crypterium.beta:id/pinConfirmation'] | //XCUIElementTypeStaticText[@name='Confirm PIN']/following-sibling::XCUIElementTypeOther[1]",
+          "waitFor": "presence"
+        }
+      ]
+}
