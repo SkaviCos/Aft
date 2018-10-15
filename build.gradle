@@ -46,8 +46,6 @@ buildscript {
 repositories {
     mavenCentral()
     jcenter()
-    mavenLocal()
-
 }
 
 
@@ -60,7 +58,6 @@ dependencies {
 
     compile group: 'com.testvagrant', name: 'optimus', version: '3.0.1'
     compile 'com.testvagrant.stepdefs:stepdefs:1.0.8'
-    compile 'com.testvagrant.optimus:intents:2.0'
 
     testCompile('com.google.inject:guice:3.0')
     testCompile(group: 'com.googlecode.lambdaj', name: 'lambdaj', version: '2.3.3')
