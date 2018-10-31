@@ -11,7 +11,7 @@ import utils.OptimusImpl;
 import java.io.IOException;
 
 
-public class StartingSteps extends BaseSteps {
+public class Hooks extends BaseSteps {
 
     @Before
     public void setUp(Scenario scenario) throws Exception {

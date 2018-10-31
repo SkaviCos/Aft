@@ -25,9 +25,27 @@
           "waitFor": "presence"
         },
         {
+          "elementName": "Next",
+          "identifier": "xpath",
+          "value": "//android.widget.Button[@text='Next']",
+          "waitFor": "presence"
+        },
+        {
           "elementName": "VerificationCode",
           "identifier": "xpath",
           "value": "//android.widget.EditText[@resource-id='com.crypterium.beta:id/smsCode']",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "CloseButton",
+          "identifier": "xpath",
+          "value": "//android.widget.ImageButton[@resource-id='com.crypterium.beta:id/close']",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "ContinueButton",
+          "identifier": "xpath",
+          "value": "//android.widget.Button[@text='Continue']",
           "waitFor": "presence"
         }
 

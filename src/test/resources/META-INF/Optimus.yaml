@@ -6,4 +6,4 @@ elementsFormat: elements
 mongoPort: 27017
 
 #Overwrite wait time depending on your application
-webDriverWait: 30
+webDriverWait: 5

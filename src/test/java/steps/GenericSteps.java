@@ -1,43 +1,35 @@
 package steps;
 
 import com.testvagrant.commons.exceptions.OptimusException;
-import com.testvagrant.intents.Intent;
-import com.testvagrant.intents.core.Seeker;
-import com.testvagrant.intents.core.SeekerImpl;
-import com.testvagrant.intents.exceptions.FeatureNotFoundException;
-import com.testvagrant.intents.utils.FeatureFinder;
 import com.testvagrant.stepdefs.exceptions.NoSuchEventException;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
-import gherkin.ast.Examples;
-import gherkin.ast.ScenarioDefinition;
-import gherkin.ast.ScenarioOutline;
-import gherkin.ast.TableCell;
+import utils.CommonFunctions;
 import utils.CrypteriumIntent;
+import utils.Stash;
 
 import java.io.IOException;
-import java.util.*;
-import java.util.stream.Collectors;
 
 import static com.testvagrant.stepdefs.core.Tapster.tapster;
 
-public class GenericSteps extends BaseSteps {
+public class GenericSteps extends steps.BaseSteps {
 
     @Given("^(\\w+)\\s+on\\s+(\\w+)\\s+screen\\s+(\\w+)\\s+on\\s+(\\w+)\\s+value\\s+(.*)$")
     public void consumerOnScreenPerformsActionOnElementWithValue(String consumer, String screen, String action, String element, String value) throws NoSuchEventException, OptimusException, IOException {
-
+        String formattedValue = CommonFunctions.getValueByTypeAndName(consumer, value);
         tapster().useDriver(getDriverInstanceFor(consumer))
                 .asConsumer(consumer)
                 .onScreen(screen)
                 .onElement(element)
                 .doAction(action)
-                .withValue(value)
+                .withValue(formattedValue)
                 .serve();
     }
 
     @And("^(\\w+)\\s+on\\s+(\\w+)\\s+screen\\s+(\\w+)\\s+on\\s+(\\w+)$")
     public void consumerOnScreenPerformsActionOnElement(String consumer, String screen, String action, String element) throws OptimusException, NoSuchEventException, IOException {
+
         tapster().useDriver(getDriverInstanceFor(consumer))
                 .onScreen(screen)
                 .asConsumer(consumer)
@@ -58,24 +50,28 @@ public class GenericSteps extends BaseSteps {
 
     @And("^(\\w+)\\s+on\\s+(\\w+)\\sscreen verifies\\s+(\\w+)\\s+has\\s+(\\w+)\\s+value\\s+(.*)$")
     public void assertelementwithvalue(String consumer, String screen, String element, String action, String value) throws OptimusException, NoSuchEventException, IOException {
+        String formattedValue = CommonFunctions.getValueByTypeAndName(consumer, value);
+
         tapster().useDriver(getDriverInstanceFor(consumer))
                 .onScreen(screen)
                 .asConsumer(consumer)
                 .onElement(element)
                 .doAction(action)
-                .withValue(value)
+                .withValue(formattedValue)
                 .serve();
     }
 
     @And("^(\\w+)\\s+on\\s+(\\w+)\\s+screen\\s+(\\w+)\\s+on\\s+(\\w+)\\s+with index as\\s+(\\w+)\\s+and value is\\s+(.*)$")
     public void consumerOnScreenPerformsActionOnListOfElementsWithValue(String consumer, String screen, String action, String element, int index, String value) throws NoSuchEventException, OptimusException, IOException, InterruptedException {
+        String formattedValue = CommonFunctions.getValueByTypeAndName(consumer, value);
+
         tapster().useDriver(getDriverInstanceFor(consumer))
                 .asConsumer(consumer)
                 .onScreen(screen)
                 .onElement(element)
                 .doAction(action)
                 .withIndex(index)
-                .withValue(value)
+                .withValue(formattedValue)
                 .serve();
     }
 
@@ -110,9 +106,17 @@ public class GenericSteps extends BaseSteps {
         new CrypteriumIntent().run(intentId, table);
     }
 
-
-    @Given("^I am running this scenario in parrallel on IOS$")
-    public void iAmRunningThisScenarioInParrallelOnIOS() throws Throwable {
-        System.out.println("Something Ran");
+    @Given("^(\\w+) on (global|local) Stash put \"([^\"]*)\" value \"([^\"]*)\"$")
+    public void putToStash(String consumer, String area, String key, String value) {
+        String formattedValue = CommonFunctions.getValueByTypeAndName(consumer, value);
+        switch (area) {
+            case "global":
+                Stash.putGlobal(key, formattedValue);
+                break;
+            case "local":
+                Stash.putLocal(consumer, key, formattedValue);
+                break;
+        }
     }
+
 }

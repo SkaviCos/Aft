@@ -18,7 +18,10 @@
         },
         "androidOnlyCapabilities": {
           "avdLaunchTimeout": 300000,
-          "useKeystore": false
+          "useKeystore": false,
+          "fullReset": false,
+          "noReset": true,
+          "autoGrantPermissions": true
         }
       },
       "deviceState": {

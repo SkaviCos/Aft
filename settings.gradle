@@ -1,1 +1,4 @@
 include ':intents'
+project(':intents').projectDir = new File("./modules/intents")
+include ':stepdefs'
+project(':stepdefs').projectDir = new File("./modules/stepdefs")

@@ -57,14 +57,13 @@ dependencies {
     compile 'cglib:cglib:3.2.4'
 
     compile group: 'com.testvagrant', name: 'optimus', version: '3.0.1'
-    compile 'com.testvagrant.stepdefs:stepdefs:1.0.8'
-
     testCompile('com.google.inject:guice:3.0')
     testCompile(group: 'com.googlecode.lambdaj', name: 'lambdaj', version: '2.3.3')
     testCompile(group: 'org.json', name: 'json', version: '20131018')
     compile group: 'com.google.guava', name: 'guava', version: '22.0'
     compile 'io.appium:java-client:6.1.0'
     compile project(':intents')
+    compile project(':stepdefs')
 }
 
 
