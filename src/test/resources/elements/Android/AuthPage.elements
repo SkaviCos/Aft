@@ -1,0 +1,30 @@
+{
+      "elements": [
+        {
+          "elementName": "LoginInput",
+          "identifier": "id",
+          "value": "login",
+
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "PasswordInput",
+          "identifier": "id",
+          "value": "password",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "SubmitButton",
+          "identifier": "id",
+          "value": "signIn",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "SignUp",
+          "identifier": "id",
+          "value": "signUp",
+          "waitFor": "presence"
+        }
+
+      ]
+}

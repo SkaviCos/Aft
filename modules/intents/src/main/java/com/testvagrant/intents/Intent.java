@@ -16,9 +16,7 @@ import gherkin.ast.TableCell;
 import gherkin.ast.TableRow;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -36,7 +34,7 @@ import java.util.stream.Collectors;
  *          <b>Then</b> User is navigated to HomeScreen
  *     </code>
  * </pre>
- *<br>
+ * <br>
  * <b>Usage:</b>
  * <pre>
  *     <code>
@@ -47,10 +45,10 @@ import java.util.stream.Collectors;
  *         <b>Then</b>  I should receive a booking confirmation
  *     </code>
  * </pre>
- *
- *  Sometimes it is needed to override default values as in the above example user would like to login other than 'JohnNash'.
- *
- *  It is possible to modify the default values of Intent as below.
+ * <p>
+ * Sometimes it is needed to override default values as in the above example user would like to login other than 'JohnNash'.
+ * <p>
+ * It is possible to modify the default values of Intent as below.
  * <b>Usage:</b>
  * <pre>
  *     <code>
@@ -95,11 +93,12 @@ import java.util.stream.Collectors;
 
 public class Intent {
 
+    private static List<gherkin.ast.Feature> features = new ArrayList<>();
     private String intentId;
     private Optional<DataTable> dataTable;
     private Optional<String> stepDefinitionPackage;
-    private static List<gherkin.ast.Feature> features = new ArrayList<>();
     private Optional<String> jarStepDefinitionPackage;
+    private Map<String, String> params = new HashMap<>();
 
     public Intent() {
         dataTable = Optional.empty();
@@ -109,7 +108,7 @@ public class Intent {
 
     }
 
-    public Intent(String stepDefsPackage){
+    public Intent(String stepDefsPackage) {
         stepDefinitionPackage = Optional.of(stepDefsPackage);
     }
 
@@ -138,15 +137,23 @@ public class Intent {
                 .withStepDefinationPackageName(stepDefinitionPackage)
                 .build();
         executor.findPatterns();
+        dataTable.ifPresent(dataTable1 -> params = dataTable1.transpose().asMap(String.class, String.class));
+
         for (Step step : elements.getSteps()) {
 
             try {
                 if (step.getArgument() != null && step.getArgument() instanceof gherkin.ast.DataTable) {
                     List<TableRow> rows = ((gherkin.ast.DataTable) step.getArgument()).getRows();
-
                     List<List<String>> table = rows.stream()
                             .map(e -> e.getCells().stream()
-                                    .map(TableCell::getValue)
+                                    .map(cell -> {
+                                        if (cell.getLocation().getLine() > 0
+                                                && cell.getValue().startsWith("<")
+                                                && cell.getValue().endsWith(">")) {
+                                            return params.getOrDefault(cell.getValue(), cell.getValue());
+                                        }
+                                        return cell.getValue();
+                                    })
                                     .collect(Collectors.toList()))
                             .collect(Collectors.toList());
                     DataTable dataTable = DataTable.create(table);
@@ -163,7 +170,7 @@ public class Intent {
 
 
     private void findFeatures() {
-        if(features.size()==0) {
+        if (features.size() == 0) {
             features = new FeatureFinder().findFeatures();
         }
     }

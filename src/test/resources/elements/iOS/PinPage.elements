@@ -1,0 +1,16 @@
+{
+      "elements": [
+        {
+          "elementName": "PinInput",
+          "identifier": "xpath",
+          "value": "//XCUIElementTypeStaticText[@name='Enter your new PIN below']/following-sibling::XCUIElementTypeOther[1]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "PinConfirmationInput",
+          "identifier": "xpath",
+          "value": "//XCUIElementTypeStaticText[@name='Confirm PIN']/following-sibling::XCUIElementTypeOther[1]",
+          "waitFor": "presence"
+        }
+      ]
+}

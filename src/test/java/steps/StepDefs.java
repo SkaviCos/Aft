@@ -5,14 +5,13 @@ import com.testvagrant.stepdefs.exceptions.NoSuchEventException;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.response.Response;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import pojo.MobileVerification;
 import utils.Api;
 import utils.CommonFunctions;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 public class StepDefs extends BaseSteps {
@@ -27,14 +26,20 @@ public class StepDefs extends BaseSteps {
         }
     }
 
-    @When("(\\w+) enters verification code for phone number (.*)")
-    public void getVerificationCodeForSmsNumber(String consumer, String phoneNumber) throws OptimusException, NoSuchEventException, IOException {
-        String formattedValue = CommonFunctions.getValueByTypeAndName(consumer, phoneNumber);
-        Response response = Api.management("/testers/mobile?mobile=" + formattedValue);
-        String value = response.as(MobileVerification.class).getCode();
+    @When("(\\w+) enters verification code for (phone number|email|<LoginType>) (.*)")
+    public void getVerificationCodeForSmsNumber(String consumer, String type, String value) throws OptimusException, NoSuchEventException, IOException {
 
-        new GenericSteps().consumerOnScreenPerformsActionOnElementWithValue(consumer, "SignupPage", "types", "VerificationCode", value);
+        try {
+            String formattedValue = CommonFunctions.getValueByTypeAndName(consumer, value);
+            String endpoint = type.equalsIgnoreCase("email") ? "email" : "mobile";
+            Response response = Api.management(String.format("/testers/%1$s?%1$s=%2$s", endpoint, formattedValue));
+            String answer = response.as(MobileVerification.class).getCode();
 
+            new GenericSteps().consumerOnScreenPerformsActionOnElementWithValue(consumer, "SignupPage", "types", "VerificationCode", answer);
+
+        } catch (NoSuchElementException| TimeoutException e) {
+            e.printStackTrace();
+        }
     }
 
 }

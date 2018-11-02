@@ -7,9 +7,12 @@ import com.testvagrant.stepdefs.exceptions.NoSuchEventException;
 import io.appium.java_client.AppiumDriver;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.Stash;
 
 import java.io.IOException;
+import java.util.List;
 
 import static com.testvagrant.stepdefs.core.Tavern.tavern;
 import static com.testvagrant.stepdefs.core.events.EventFinder.eventFinder;
@@ -30,6 +33,10 @@ public class Tapster {
     private int index;
 
     private Tapster() {
+    }
+
+    public static Tapster tapster() {
+        return new Tapster();
     }
 
     public Tapster useDriver(AppiumDriver driver) {
@@ -68,11 +75,8 @@ public class Tapster {
         return this;
     }
 
-    public static Tapster tapster() {
-        return new Tapster();
-    }
-
     public Tapster serve() throws NoSuchEventException, OptimusException, IOException {
+        handlePopups();
         Event event = eventFinder().findEvent(action);
         Events events = eventLookup().load().getEvent(Integer.valueOf(event.getEventCode(), 2));
         if (ASSERT.equals(events) || SCROLL.equals(events)) {
@@ -80,10 +84,33 @@ public class Tapster {
             tavern(driver).event(event).value(value).serve(targetBy);
         } else if (NAVIGATION.equals(events)) {
             tavern(driver).event(event).serveNavigation();
-        }else {
+        } else {
             WebElement webElement = optimusElementFinder(driver).findWebElement(consumer, screen, element, value, index);
             tavern(driver).event(event).value(value).serve(webElement);
         }
         return this;
     }
+
+    public void handlePopups() {
+        while (true) {
+            List<WebElement> elements = driver.findElements(By.xpath("//XCUIElementTypeAlert"));
+            if (elements.size() > 0) {
+                String name = elements.get(0).getAttribute("name");
+                String answerName;
+                switch (name) {
+                    case "Use Face ID":
+                    case "Use Touch ID":
+                        String stashVal = Stash.getOrDefault(this.consumer, "TouchID", "false").toString();
+                        answerName = Boolean.parseBoolean(stashVal) ? "Yes" : "No";
+                        break;
+                    default:
+                        throw new RuntimeException(String.format("Undefined alert type: %s.", name));
+                }
+                driver.findElement(By.id(answerName)).click();
+            } else {
+                break;
+            }
+        }
+    }
+
 }

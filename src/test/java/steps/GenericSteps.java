@@ -103,12 +103,13 @@ public class GenericSteps extends steps.BaseSteps {
 
     @Given("^(?:DataIntent):(.*)$")
     public void dataIntent(String intentId, DataTable table) throws Throwable {
-        new CrypteriumIntent().run(intentId, table);
+        new CrypteriumIntent().run(intentId.trim(), table);
     }
 
     @Given("^(\\w+) on (global|local) Stash put \"([^\"]*)\" value \"([^\"]*)\"$")
     public void putToStash(String consumer, String area, String key, String value) {
         String formattedValue = CommonFunctions.getValueByTypeAndName(consumer, value);
+        System.out.println(formattedValue);
         switch (area) {
             case "global":
                 Stash.putGlobal(key, formattedValue);

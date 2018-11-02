@@ -1,0 +1,30 @@
+{
+      "elements": [
+        {
+          "elementName": "LoginInput",
+          "identifier": "xpath",
+          "value": "(//XCUIElementTypeTextField)[1]",
+
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "PasswordInput",
+          "identifier": "xpath",
+          "value": "(//XCUIElementTypeSecureTextField)[1]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "SubmitButton",
+          "identifier": "xpath",
+          "value": "//XCUIElementTypeButton[@name='Login']",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "SignUp",
+          "identifier": "id",
+          "value": "Sign up",
+          "waitFor": "presence"
+        }
+
+      ]
+}

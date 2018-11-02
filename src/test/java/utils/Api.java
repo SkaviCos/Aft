@@ -20,6 +20,7 @@ public class Api {
         supplierMap.put("country from whitelist", () -> getRandomCountryByCryptoRestrictions(false).getName());
         supplierMap.put("country from blacklist", () -> getRandomCountryByCryptoRestrictions(true).getName());
         supplierMap.put("free phone number", Api::generateFreePhoneNumber);
+        supplierMap.put("free email", Api::generateFreeEmail);
 
         if (supplierMap.containsKey(name)) {
             return supplierMap.get(name).get();
@@ -44,10 +45,25 @@ public class Api {
     public static String generateFreePhoneNumber() {
         for (int i = 0; i < 10; i++) {
             //700000 00001-700000 29999
-            String phoneNumber = "700000" + (1 + new Random().nextInt(29998));
+            String phoneNumber = "700000" + new Random().nextInt(3) + RandomStringUtils.random(4, false, true);
             Response r = management("/testers/mobile?mobile=" + phoneNumber);
             if (r.prettyPrint().equals("null")) {
                 return phoneNumber;
+            }
+        }
+        return "";
+    }
+
+    public static String generateFreeEmail() {
+        for (int i = 0; i < 10; i++) {
+            //%+test@%.com
+            String email = String.format("%s+test@%s.com",
+                    RandomStringUtils.randomAlphabetic(5),
+                    RandomStringUtils.randomAlphabetic(3)
+            );
+            Response r = management("/testers/email?email=" + email);
+            if (r.prettyPrint().equals("null")) {
+                return email;
             }
         }
         return "";
@@ -70,6 +86,6 @@ public class Api {
     }
 
     public static void main(String[] args) {
-        CountryItem s = getRandomCountryByCryptoRestrictions(false);
+        String s ="";
     }
 }

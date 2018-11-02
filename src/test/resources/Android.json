@@ -12,7 +12,7 @@
       "nativeApp":true,
       "optimusDesiredCapabilities": {
         "appiumServerCapabilities": {
-          "app": "crypt.apk",
+          "app": "Android.apk",
           "platformName": "Android",
           "automationName" : "UIAutomator2"
         },

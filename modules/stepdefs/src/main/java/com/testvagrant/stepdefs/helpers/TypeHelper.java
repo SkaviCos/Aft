@@ -25,10 +25,10 @@ public class TypeHelper extends ActionHelper {
         waitForElementToBeVisible(element);
         element.clear();
         element.sendKeys(value);
-        try{
-            driver.hideKeyboard();
-        } catch (Exception e) {
-            //ignore exception
-        }
+//        try{
+//            driver.hideKeyboard();
+//        } catch (Exception e) {
+//            //ignore exception
+//        }
     }
 }
