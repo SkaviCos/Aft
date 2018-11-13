@@ -15,6 +15,8 @@ import static com.testvagrant.stepdefs.core.Tapster.tapster;
 
 public class GenericSteps extends steps.BaseSteps {
 
+
+
     @Given("^(\\w+)\\s+on\\s+(\\w+)\\s+screen\\s+(\\w+)\\s+on\\s+(\\w+)\\s+value\\s+(.*)$")
     public void consumerOnScreenPerformsActionOnElementWithValue(String consumer, String screen, String action, String element, String value) throws NoSuchEventException, OptimusException, IOException {
         String formattedValue = CommonFunctions.getValueByTypeAndName(consumer, value);
@@ -24,6 +26,33 @@ public class GenericSteps extends steps.BaseSteps {
                 .onElement(element)
                 .doAction(action)
                 .withValue(formattedValue)
+                .serve();
+    }
+
+    @Given("^(\\w+)\\s+on\\s+(\\w+)\\s+screen\\s+(\\w+)\\s+on\\s+(\\w+)\\s+values \\s+(.*),\\s+(.*)$")
+    public void consumerOnScreenPerformsActionOnElementWithTwoParams(String consumer, String screen, String action, String element, String value1, String value2) throws NoSuchEventException, OptimusException, IOException {
+        String formattedValue1 = CommonFunctions.getValueByTypeAndName(consumer, value1);
+        String formattedValue2 = CommonFunctions.getValueByTypeAndName(consumer, value2);
+        tapster().useDriver(getDriverInstanceFor(consumer))
+                .asConsumer(consumer)
+                .onScreen(screen)
+                .onElement(element)
+                .doAction(action)
+                .withValues(formattedValue1, formattedValue2)
+                .serve();
+    }
+
+    @Given("^(\\w+)\\s+on\\s+(\\w+)\\s+screen\\s+(\\w+)\\s+on\\s+(\\w+)\\s+values \\s+(.*),\\s+(.*),\\s+(.*)$")
+    public void consumerOnScreenPerformsActionOnElementWithTwoParams(String consumer, String screen, String action, String element, String value1, String value2, String value3) throws NoSuchEventException, OptimusException, IOException {
+        String formattedValue1 = CommonFunctions.getValueByTypeAndName(consumer, value1);
+        String formattedValue2 = CommonFunctions.getValueByTypeAndName(consumer, value2);
+        String formattedValue3 = CommonFunctions.getValueByTypeAndName(consumer, value3);
+        tapster().useDriver(getDriverInstanceFor(consumer))
+                .asConsumer(consumer)
+                .onScreen(screen)
+                .onElement(element)
+                .doAction(action)
+                .withValues(formattedValue1, formattedValue2, formattedValue3)
                 .serve();
     }
 
@@ -86,12 +115,48 @@ public class GenericSteps extends steps.BaseSteps {
                 .serve();
     }
 
-    @Given("^(\\w+)\\s+on\\s+(\\w+)\\s+screen\\s+performs\\s+(.*)$")
-    public void consumerOnScreenPerformsNavigation(String consumer, String screen, String navigation) throws NoSuchEventException, IOException, OptimusException {
+    @Given("^(\\w+)\\s+on\\s+(\\w+)\\s+screen(?:\\s+perform|)\\s+\\((.*)\\)$")
+    public void consumerOnScreenPerformsAction(String consumer, String screen, String action) throws NoSuchEventException, IOException, OptimusException {
         tapster().useDriver(getDriverInstanceFor(consumer))
                 .asConsumer(consumer)
                 .onScreen(screen)
-                .doAction(navigation)
+                .doAction(action)
+                .serve();
+    }
+
+    @Given("^(\\w+)\\s+on\\s+(\\w+)\\s+screen\\s+\\((.*)\\)\\s+with value\\s+\"(.*)\"$")
+    public void consumerOnScreenPerformsActionWithOneParam(String consumer, String screen, String action, String value) throws NoSuchEventException, IOException, OptimusException {
+        String formattedValue = CommonFunctions.getValueByTypeAndName(consumer, value);
+        tapster().useDriver(getDriverInstanceFor(consumer))
+                .asConsumer(consumer)
+                .onScreen(screen)
+                .doAction(action)
+                .withValue(formattedValue)
+                .serve();
+    }
+
+    @Given("^(\\w+)\\s+on\\s+(\\w+)\\s+screen\\s+\\((.*)\\)\\s+with values\\s+\"(.*)\",\\s+\"(.*)\"$")
+    public void consumerOnScreenPerformsActionWithTwoParam(String consumer, String screen, String action, String value1, String value2) throws NoSuchEventException, IOException, OptimusException {
+        String formattedValue1 = CommonFunctions.getValueByTypeAndName(consumer, value1);
+        String formattedValue2 = CommonFunctions.getValueByTypeAndName(consumer, value2);
+        tapster().useDriver(getDriverInstanceFor(consumer))
+                .asConsumer(consumer)
+                .onScreen(screen)
+                .doAction(action)
+                .withValues(formattedValue1, formattedValue2)
+                .serve();
+    }
+
+    @Given("^(\\w+)\\s+on\\s+(\\w+)\\s+screen\\s+performs\\s+(.*)\\s+with values\\s+\"(.*)\",\"(.*)\",\"(.*)\"$")
+    public void consumerOnScreenPerformsActionWithTwoParam(String consumer, String screen, String action, String value1, String value2, String value3) throws NoSuchEventException, IOException, OptimusException {
+        String formattedValue1 = CommonFunctions.getValueByTypeAndName(consumer, value1);
+        String formattedValue2 = CommonFunctions.getValueByTypeAndName(consumer, value2);
+        String formattedValue3 = CommonFunctions.getValueByTypeAndName(consumer, value3);
+        tapster().useDriver(getDriverInstanceFor(consumer))
+                .asConsumer(consumer)
+                .onScreen(screen)
+                .doAction(action)
+                .withValues(formattedValue1, formattedValue2, formattedValue3)
                 .serve();
     }
 

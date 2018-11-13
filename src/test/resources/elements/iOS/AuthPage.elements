@@ -2,21 +2,20 @@
       "elements": [
         {
           "elementName": "LoginInput",
-          "identifier": "xpath",
-          "value": "(//XCUIElementTypeTextField)[1]",
-
+          "identifier": "id",
+          "value": "LoginInput",
           "waitFor": "presence"
         },
         {
           "elementName": "PasswordInput",
-          "identifier": "xpath",
-          "value": "(//XCUIElementTypeSecureTextField)[1]",
+          "identifier": "id",
+          "value": "PasswordInput",
           "waitFor": "presence"
         },
         {
           "elementName": "SubmitButton",
-          "identifier": "xpath",
-          "value": "//XCUIElementTypeButton[@name='Login']",
+          "identifier": "id",
+          "value": "LoginButton",
           "waitFor": "presence"
         },
         {

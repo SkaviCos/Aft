@@ -8,17 +8,19 @@ import java.util.*;
 
 public class ScrollDictionary extends EventDictionary {
 
+    private List<String> scrollToElementDictionary = new ArrayList<>();
     private List<String> scrollUpDictionary = new ArrayList<>();
     private List<String> scrollDownDictionary = new ArrayList<>();
     private List<String> scrollUpInElementDictionary = new ArrayList<>();
     private List<String> scrollDownInElementDictionary = new ArrayList<>();
     private List<String> scrollLeftInElementDictionary = new ArrayList<>();
     private List<String> scrollRightInElementDictionary = new ArrayList<>();
-    private Map<Event,List<String>> scrollMap = new HashMap<>();
+    private Map<Event, List<String>> scrollMap = new HashMap<>();
 
     private ScrollDictionary() {
 
     }
+
     public static ScrollDictionary scrollDictionary() {
         return new ScrollDictionary();
     }
@@ -28,7 +30,7 @@ public class ScrollDictionary extends EventDictionary {
     }
 
     public Event search(String action) {
-        return search(scrollMap,action);
+        return search(scrollMap, action);
     }
 
     private ScrollDictionary init() {
@@ -38,17 +40,26 @@ public class ScrollDictionary extends EventDictionary {
         initScrollDownInElementDictionary();
         initScrollLeftInElementDictionary();
         initScrollRightInElementDictionary();
-        scrollMap.put(Scroll.SCROLL_UP,scrollUpDictionary);
-        scrollMap.put(Scroll.SCROLL_DOWN,scrollDownDictionary);
-        scrollMap.put(Scroll.SCROLL_UP_TO_ELEMENT,scrollUpInElementDictionary);
-        scrollMap.put(Scroll.SCROLL_DOWN_TO_ELEMENT,scrollDownInElementDictionary);
-        scrollMap.put(Scroll.SCROLL_LEFT_TO_ELEMENT,scrollLeftInElementDictionary);
-        scrollMap.put(Scroll.SCROLL_RIGHT_TO_ELEMENT,scrollRightInElementDictionary);
+        initScrollToElementDictionary();
+        scrollMap.put(Scroll.SCROLL_UP, scrollUpDictionary);
+        scrollMap.put(Scroll.SCROLL_DOWN, scrollDownDictionary);
+        scrollMap.put(Scroll.SCROLL_TO, scrollToElementDictionary);
+        scrollMap.put(Scroll.SCROLL_UP_TO_ELEMENT, scrollUpInElementDictionary);
+        scrollMap.put(Scroll.SCROLL_DOWN_TO_ELEMENT, scrollDownInElementDictionary);
+        scrollMap.put(Scroll.SCROLL_LEFT_TO_ELEMENT, scrollLeftInElementDictionary);
+        scrollMap.put(Scroll.SCROLL_RIGHT_TO_ELEMENT, scrollRightInElementDictionary);
         return this;
     }
 
     private void initScrollRightInElementDictionary() {
         scrollRightInElementDictionary.add("scrollrightinelement");
+    }
+
+    private void initScrollToElementDictionary() {
+        scrollToElementDictionary.add("scroll to");
+        scrollToElementDictionary.add("scrolls to");
+        scrollToElementDictionary.add("scrollto");
+        scrollToElementDictionary.add("scrollsto");
     }
 
     private void initScrollLeftInElementDictionary() {

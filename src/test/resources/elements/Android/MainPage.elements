@@ -1,9 +1,75 @@
 {
       "elements": [
         {
-          "elementName": "Iban_Transfer",
+          "elementName": "TotalHint",
           "identifier": "id",
           "value": "totalHint",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "BankTransfer",
+          "identifier": "xpath",
+          "value": "//android.widget.TextView[contains(@text, 'transfer')]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "SendCrypto",
+          "identifier": "xpath",
+          "value": "//android.widget.TextView[contains(@text, 'Send')]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "ReceiveCrypto",
+          "identifier": "xpath",
+          "value": "//android.widget.TextView[contains(@text, 'Receive')]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "ByyCRPTForCrypto",
+          "identifier": "xpath",
+          "value": "//android.widget.TextView[contains(@text, 'for crypto')]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "BuyCRPTForEuro",
+          "identifier": "xpath",
+          "value": "//android.widget.TextView[contains(@text, 'for EUR')]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "TopUp",
+          "identifier": "xpath",
+          "value": "//android.widget.TextView[contains(@text, 'Top up')]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "BankTransfers",
+          "identifier": "xpath",
+          "value": "//android.widget.TextView[contains(@text, 'transfers')]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "BPay",
+          "identifier": "xpath",
+          "value": "//android.widget.TextView[contains(@text, 'BPay')]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "BetaAlertConfirm",
+          "identifier": "id",
+          "value": "kycDialogDescription",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "KycAlert",
+          "identifier": "id",
+          "value": "kycDialogButton",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "AlertClose",
+          "identifier": "id",
+          "value": "close",
           "waitFor": "presence"
         }
       ]

@@ -1,0 +1,16 @@
+{
+  "elements": [
+    {
+      "elementName": "PageTitle",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeNavigationBar[@name='Send Crypto']",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "Back",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeNavigationBar[@name='Send Crypto']/XCUIElementTypeButton[1]",
+      "waitFor": "presence"
+    }
+  ]
+}

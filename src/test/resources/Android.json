@@ -20,7 +20,7 @@
           "avdLaunchTimeout": 300000,
           "useKeystore": false,
           "fullReset": false,
-          "noReset": true,
+          "noReset": false,
           "autoGrantPermissions": true
         }
       },

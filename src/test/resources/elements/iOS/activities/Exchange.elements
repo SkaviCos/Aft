@@ -1,0 +1,16 @@
+{
+  "elements": [
+    {
+      "elementName": "PageTitle",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeNavigationBar[@name='Exchange']",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "Back",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeNavigationBar[@name='Exchange']/XCUIElementTypeButton[1]",
+      "waitFor": "presence"
+    }
+  ]
+}

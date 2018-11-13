@@ -1,10 +1,10 @@
 {
-      "elements": [
-        {
-          "elementName": "Close",
-          "identifier": "id",
-          "value": "group6",
-          "waitFor": "presence"
-        }
-      ]
+  "elements": [
+    {
+      "elementName": "Close",
+      "identifier": "id",
+      "value": "group6",
+      "waitFor": "presence"
+    }
+  ]
 }

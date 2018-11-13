@@ -6,7 +6,7 @@
   "testFeed": [
     {
       "belongsTo": "user",
-      "runsOn": "device",
+      "runsOn": "any",
       "appDir": "app",
       "nativeApp":true,
       "optimusDesiredCapabilities": {
@@ -16,7 +16,8 @@
           "automationName": "XCUITest",
           "xcodeOrgId": "J2Q9Q63R87",
           "xcodeSigningId": "iPhone Developer",
-          "screenshotWaitTimeout" : 300
+          "screenshotWaitTimeout" : 300,
+          "useJSONSource": true
         },
         "iOSOnlyCapabilities": {
           "launchTimeout": 300000

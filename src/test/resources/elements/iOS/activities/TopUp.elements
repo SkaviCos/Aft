@@ -1,0 +1,16 @@
+{
+  "elements": [
+    {
+      "elementName": "PageTitle",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeNavigationBar[@name='Top up mobile with']",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "Back",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeNavigationBar[@name='Top up mobile with']/XCUIElementTypeButton[1]",
+      "waitFor": "presence"
+    }
+  ]
+}

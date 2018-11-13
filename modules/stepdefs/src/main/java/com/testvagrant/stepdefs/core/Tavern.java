@@ -7,13 +7,13 @@ import org.openqa.selenium.WebElement;
 
 import static com.testvagrant.stepdefs.core.events.EventCodes.*;
 import static com.testvagrant.stepdefs.core.events.EventLookup.eventLookup;
-import static com.testvagrant.stepdefs.helpers.AssertHelper.assertHelper;
-import static com.testvagrant.stepdefs.helpers.NavigationHelper.navigator;
-import static com.testvagrant.stepdefs.helpers.ScrollHelper.scroller;
-import static com.testvagrant.stepdefs.helpers.SlideHelper.slider;
-import static com.testvagrant.stepdefs.helpers.SwipeHelper.swiper;
-import static com.testvagrant.stepdefs.helpers.TapHelper.tapHelper;
-import static com.testvagrant.stepdefs.helpers.TypeHelper.typeHelper;
+import static helpers.AssertHelper.assertHelper;
+import static helpers.NavigationHelper.navigator;
+import static helpers.ScrollHelper.scroller;
+import static helpers.SlideHelper.slider;
+import static helpers.SwipeHelper.swiper;
+import static helpers.TapHelper.tapHelper;
+import static helpers.TypeHelper.typeHelper;
 
 public class Tavern {
 
@@ -118,6 +118,9 @@ public class Tavern {
 
     private void serveScroll() {
         switch (event.getEventCode()) {
+            case SCROLL_TO_CODE:
+                scroller(driver).scrollTo(by);
+                break;
             case SCROLL_UP_CODE:
                 scroller(driver).scrollUp(by);
                 break;

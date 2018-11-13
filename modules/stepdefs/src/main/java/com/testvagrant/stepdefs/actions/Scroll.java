@@ -7,6 +7,7 @@ import static com.testvagrant.stepdefs.core.events.EventCodes.*;
 
 public enum Scroll implements Event {
     SCROLL_UP(SCROLL_UP_CODE),
+    SCROLL_TO(SCROLL_TO_CODE),
     SCROLL_DOWN(SCROLL_DOWN_CODE),
     SCROLL_UP_TO_ELEMENT(SCROLL_UP_IN_ELEMENT_CODE),
     SCROLL_DOWN_TO_ELEMENT(SCROLL_DOWN_IN_ELEMENT_CODE),
