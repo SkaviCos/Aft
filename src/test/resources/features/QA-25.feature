@@ -19,8 +19,8 @@ Feature: Feature's access on dashboard dependencies on KYC level and region
       | BuyCRPTForEuro   | false   |
       | TopUp            | false   |
 
-    And user on MainPage screen verifies BankTransfers is not displayed
-    And user on MainPage screen verifies BPay is not displayed
+    And user on MainPage screen verifies BankTransfers is not displayed on page
+    And user on MainPage screen verifies BPay is not displayed on page
 
 
   @QA-25_2
@@ -40,8 +40,8 @@ Feature: Feature's access on dashboard dependencies on KYC level and region
       | BuyCRPTForEuro   | false   | true |
       | TopUp            | true    |      |
 
-    And user on MainPage screen verifies BankTransfers is not displayed
-    And user on MainPage screen verifies BPay is not displayed
+    And user on MainPage screen verifies BankTransfers is not displayed on page
+    And user on MainPage screen verifies BPay is not displayed on page
 
   @QA-25_3
   Scenario: KYC2 - Not Australian
@@ -60,8 +60,8 @@ Feature: Feature's access on dashboard dependencies on KYC level and region
       | BuyCRPTForEuro   | false   | true |
       | TopUp            | true    |      |
 
-    And user on MainPage screen verifies BankTransfers is not displayed
-    And user on MainPage screen verifies BPay is not displayed
+    And user on MainPage screen verifies BankTransfers is not displayed on page
+    And user on MainPage screen verifies BPay is not displayed on page
 
   @QA-25_4
   Scenario: KYC0 - Australian

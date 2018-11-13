@@ -13,7 +13,9 @@ import java.util.Map;
  */
 public class AssertDictionary extends EventDictionary {
     private List<String> assertIsVisibleDictionary = new ArrayList<>();
+    private List<String> assertIsVisibleOnPageDictionary = new ArrayList<>();
     private List<String> assertIsNotVisibleDictionary = new ArrayList<>();
+    private List<String> assertIsNotVisibleOnPageDictionary = new ArrayList<>();
     private List<String> assertIsTextPresentDictionary = new ArrayList<>();
     private List<String> assertIsTextNotPresentDictionary = new ArrayList<>();
     private List<String> assertIsEnabledDictionary = new ArrayList<>();
@@ -34,12 +36,15 @@ public class AssertDictionary extends EventDictionary {
         initAssertIsNotEnabledDictionary();
         initAssertIsVisibleDictionary();
         initAssertIsNotVisibleDictionary();
+        initAssertIsNotVisibleOnPageDictionary();
         assertMap.put(Assert.ASSERT_IS_TEXT_DISPLAYED, assertIsTextPresentDictionary);
         assertMap.put(Assert.ASSERT_IS_TEXT_NOT_DISPLAYED, assertIsTextNotPresentDictionary);
         assertMap.put(Assert.ASSERT_IS_ENABLED, assertIsEnabledDictionary);
         assertMap.put(Assert.ASSERT_IS_NOT_ENABLED, assertIsNotEnabledDictionary);
         assertMap.put(Assert.ASSERT_IS_VISIBLE, assertIsVisibleDictionary);
+        assertMap.put(Assert.ASSERT_IS_VISIBLE_ON_PAGE, assertIsVisibleOnPageDictionary);
         assertMap.put(Assert.ASSERT_IS_NOT_VISIBLE, assertIsNotVisibleDictionary);
+        assertMap.put(Assert.ASSERT_IS_NOT_VISIBLE_ON_PAGE, assertIsNotVisibleOnPageDictionary);
         return this;
     }
 
@@ -50,9 +55,23 @@ public class AssertDictionary extends EventDictionary {
         assertIsNotVisibleDictionary.add("not displayed");
     }
 
+    private void initAssertIsNotVisibleOnPageDictionary() {
+        assertIsNotVisibleOnPageDictionary.add("notvisibleonpage");
+        assertIsNotVisibleOnPageDictionary.add("not-visible-on-page");
+        assertIsNotVisibleOnPageDictionary.add("not visible on page");
+        assertIsNotVisibleOnPageDictionary.add("not displayed on page");
+    }
+
     private void initAssertIsVisibleDictionary() {
         assertIsVisibleDictionary.add("visible");
         assertIsVisibleDictionary.add("displayed");
+    }
+
+    private void initAssertIsVisibleOnPageDictionary() {
+        assertIsVisibleOnPageDictionary.add("visibleonpage");
+        assertIsVisibleOnPageDictionary.add("visible-on-page");
+        assertIsVisibleOnPageDictionary.add("visible on page");
+        assertIsVisibleOnPageDictionary.add("displayed on page");
     }
 
     private void initAssertIsNotEnabledDictionary() {

@@ -99,8 +99,14 @@ public class Tavern {
             case ASSERT_IS_VISIBLE_CODE:
                 assertHelper(driver).isDisplayed(by);
                 break;
+            case ASSERT_IS_VISIBLE_CODE_ON_PAGE:
+                assertHelper(driver).isDisplayedOnPage(by);
+                break;
             case ASSERT_IS_NOT_VISIBLE_CODE:
                 assertHelper(driver).isNotDisplayed(by);
+                break;
+            case ASSERT_IS_NOT_VISIBLE_CODE_ON_PAGE:
+                assertHelper(driver).isNotDisplayedOnPage(by);
                 break;
         }
     }

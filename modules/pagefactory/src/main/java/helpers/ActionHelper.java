@@ -70,7 +70,7 @@ public class ActionHelper {
 
     boolean isElementVisible(By by) {
         try {
-            int timeout = Commons.getOptimusConfiguration().getWebDriverWait();
+            int timeout = Commons.getOptimusConfiguration().getWebDriverWait() / 3;
             webDriverWait = new WebDriverWait(driver, timeout);
             webDriverWait.until(ExpectedConditions.visibilityOf(driver.findElement(by)));
             WebElement element = driver.findElement(by);

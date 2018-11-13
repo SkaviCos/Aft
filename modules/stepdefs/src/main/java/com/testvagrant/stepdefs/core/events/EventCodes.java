@@ -1,6 +1,7 @@
 package com.testvagrant.stepdefs.core.events;
 
 public interface EventCodes {
+    //11001
     String TAP_CODE = "00001";
     String DOUBLE_TAP_CODE = "00010";
     String SCROLL_UP_CODE = "00011";
@@ -18,6 +19,8 @@ public interface EventCodes {
     String ASSERT_IS_NOT_ENABLED_CODE = "01100";
     String ASSERT_IS_VISIBLE_CODE = "01101";
     String ASSERT_IS_NOT_VISIBLE_CODE = "01110";
+    String ASSERT_IS_NOT_VISIBLE_CODE_ON_PAGE = "11000";
+    String ASSERT_IS_VISIBLE_CODE_ON_PAGE = "11001";
     String SCROLL_UP_IN_ELEMENT_CODE = "01111";
     String SCROLL_DOWN_IN_ELEMENT_CODE = "10000";
     String SCROLL_LEFT_IN_ELEMENT_CODE = "10001";

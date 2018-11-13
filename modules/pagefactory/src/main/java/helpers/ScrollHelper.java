@@ -11,6 +11,8 @@ import java.time.Duration;
 
 public abstract class ScrollHelper extends ActionHelper {
 
+    private static final Integer SWIPE_COUNT = 3;
+
     protected ScrollHelper(AppiumDriver driver) {
         super(driver);
     }
@@ -26,7 +28,7 @@ public abstract class ScrollHelper extends ActionHelper {
     public void scrollDown(By by) {
         hideKeyboard();
         int i = 0;
-        while (i < 12) {
+        while (i < SWIPE_COUNT) {
             if (isElementVisible(by)) {
                 return;
             }
@@ -38,8 +40,8 @@ public abstract class ScrollHelper extends ActionHelper {
     public void scrollUp(By by) {
         hideKeyboard();
         int i = 0;
-        while (i < 12) {
-            if (isElementPresent(by)) {
+        while (i < SWIPE_COUNT) {
+            if (isElementVisible(by)) {
                 return;
             }
             up();
@@ -59,7 +61,7 @@ public abstract class ScrollHelper extends ActionHelper {
                 , point.getY() + dimension.getWidth() / 2);
 
         int i = 0;
-        while (i < 12) {
+        while (i < SWIPE_COUNT) {
             if (isTextPresent(inElement, toText)) {
                 return;
             }
@@ -80,7 +82,7 @@ public abstract class ScrollHelper extends ActionHelper {
                 , point.getY() + dimension.getWidth() / 2);
 
         int i = 0;
-        while (i < 12) {
+        while (i < SWIPE_COUNT) {
             if (isTextPresent(inElement, toText)) {
                 return;
             }
@@ -101,7 +103,7 @@ public abstract class ScrollHelper extends ActionHelper {
                 , point.getY() + dimension.getWidth() / 3);
 
         int i = 0;
-        while (i < 12) {
+        while (i < SWIPE_COUNT) {
             if (isTextPresent(inElement, toText)) {
                 return;
             }
@@ -122,7 +124,7 @@ public abstract class ScrollHelper extends ActionHelper {
                 , point.getY() + dimension.getWidth() * 2 / 3);
 
         int i = 0;
-        while (i < 12) {
+        while (i < SWIPE_COUNT) {
             if (isTextPresent(inElement, toText)) {
                 return;
             }
@@ -177,6 +179,7 @@ public abstract class ScrollHelper extends ActionHelper {
 
         @Override
         public void scrollTo(By by) {
+            scrollUp(by);
             scrollDown(by);
         }
 
@@ -191,7 +194,7 @@ public abstract class ScrollHelper extends ActionHelper {
         @Override
         public void scrollTo(By by) {
             int i = 0;
-            while (i < 12) {
+            while (i < SWIPE_COUNT) {
                 WebElement e = driver.findElement(by);
                 int xEl = e.getLocation().getX();
                 int yEl = e.getLocation().getY();
