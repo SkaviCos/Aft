@@ -1,0 +1,16 @@
+{
+  "elements": [
+    {
+      "elementName": "PageTitle",
+      "identifier": "xpath",
+      "value": "//android.widget.TextView[contains(@text, 'Choose account type')]",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "Back",
+      "identifier": "id",
+      "value": "Перейти вверх",
+      "waitFor": "presence"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+group 'com.testvagrant.optimus-commons'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+buildscript { repositories { mavenCentral() } }

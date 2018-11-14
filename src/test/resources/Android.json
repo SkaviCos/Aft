@@ -6,19 +6,22 @@
   },
   "testFeed":[
     {
-      "belongsTo":"optimus",
+      "belongsTo":"user",
       "runsOn": "any",
       "appDir": "app",
       "nativeApp":true,
       "optimusDesiredCapabilities": {
         "appiumServerCapabilities": {
-          "app": "crypt.apk",
+          "app": "Android.apk",
           "platformName": "Android",
-          "automationName" : "UIAutomator"
+          "automationName" : "UIAutomator2"
         },
         "androidOnlyCapabilities": {
           "avdLaunchTimeout": 300000,
-          "useKeystore": false
+          "useKeystore": false,
+          "fullReset": false,
+          "noReset": false,
+          "autoGrantPermissions": true
         }
       },
       "deviceState": {

@@ -1,0 +1,10 @@
+{
+  "elements": [
+    {
+      "elementName": "Close",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeNavigationBar[not(@name)]/XCUIElementTypeButton",
+      "waitFor": "presence"
+    }
+  ]
+}

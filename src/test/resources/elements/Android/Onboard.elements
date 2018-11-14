@@ -1,0 +1,10 @@
+{
+      "elements": [
+        {
+          "elementName": "Close",
+          "identifier": "xpath",
+          "value": "//android.widget.LinearLayout[@resource-id='com.crypterium.beta:id/onboardingCircle']/following-sibling::android.widget.ImageButton[1]",
+          "waitFor": "presence"
+        }
+      ]
+}

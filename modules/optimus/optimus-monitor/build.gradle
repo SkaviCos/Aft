@@ -1,0 +1,11 @@
+group 'com.testvagrant.monitor'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+dependencies {
+    compile project(':mdb')
+}

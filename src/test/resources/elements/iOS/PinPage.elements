@@ -1,0 +1,16 @@
+{
+      "elements": [
+        {
+          "elementName": "PinInput",
+          "identifier": "id",
+          "value": "Pin",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "PinConfirmationInput",
+          "identifier": "id",
+          "value": "PinConfirmation",
+          "waitFor": "presence"
+        }
+      ]
+}

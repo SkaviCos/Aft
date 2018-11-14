@@ -1,0 +1,16 @@
+{
+  "elements": [
+    {
+      "elementName": "PageTitle",
+      "identifier": "xpath",
+      "value": "//android.widget.TextView[contains(@text, 'Exchange')]",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "Back",
+      "identifier": "xpath",
+      "value": "//android.widget.ImageButton[@content-desc='Перейти вверх']",
+      "waitFor": "presence"
+    }
+  ]
+}

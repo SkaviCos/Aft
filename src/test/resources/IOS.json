@@ -5,26 +5,26 @@
   },
   "testFeed": [
     {
-      "belongsTo": "optimus",
+      "belongsTo": "user",
       "runsOn": "any",
       "appDir": "app",
       "nativeApp":true,
       "optimusDesiredCapabilities": {
         "appiumServerCapabilities": {
-          "app": "Beta/Beta.ipa",
+          "app": "iOS.app",
           "platformName": "iOS",
           "automationName": "XCUITest",
           "xcodeOrgId": "J2Q9Q63R87",
           "xcodeSigningId": "iPhone Developer",
-          "udid": "0732470e3f093d680c20d5917c50453906993b76",
-          "updatedWDABundleId": "com.facebook.WebDriverAgentRunnerMa2ter"
+          "screenshotWaitTimeout" : 300,
+          "useJSONSource": true
         },
         "iOSOnlyCapabilities": {
           "launchTimeout": 300000
         }
       },
       "deviceState":{
-        "captureVideo":true
+        "captureVideo":false
       }
     }
   ]

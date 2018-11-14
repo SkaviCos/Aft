@@ -1,0 +1,99 @@
+{
+      "elements": [
+//        Common
+        {
+          "elementName": "Next",
+          "identifier": "xpath",
+          "value": "//android.widget.Button[@text='Next']",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "AcceptTerms",
+          "identifier": "id",
+          "value": "agree",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "CloseButton",
+          "identifier": "id",
+          "value": "close",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "ContinueButton",
+          "identifier": "xpath",
+          "value": "//android.widget.Button[@text='Continue']",
+          "waitFor": "presence"
+        },
+        //COUNTRY
+        {
+          "elementName": "CountryOfResidence",
+          "identifier": "id",
+          "value": "countryCodePickerSearch",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "Country",
+          "identifier": "id",
+          "value": "country_title",
+          "waitFor": "presence"
+        },
+        //PHONE
+        {
+          "elementName": "Phone",
+          "identifier": "id",
+          "value": "login",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "VerificationCode",
+          "identifier": "id",
+          "value": "smsCode",
+          "waitFor": "presence"
+        },
+        //NAME
+        {
+          "elementName": "FirstName",
+          "identifier": "id",
+          "value": "firstName",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "LastName",
+          "identifier": "id",
+          "value": "lastName",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "Email",
+          "identifier": "id",
+          "value": "email",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "Password",
+          "identifier": "id",
+          "value": "password",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "PasswordConfirm",
+          "identifier": "id",
+          "value": "passwordConfirm",
+          "waitFor": "presence"
+        },
+        //SUCCESS
+        {
+          "elementName": "Success",
+          "identifier": "xpath",
+          "value": "android.widget.TextView[@text='Now you can start using the most advanced payment solutions on the market.']",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "Finish",
+          "identifier": "id",
+          "value": "authReady",
+          "waitFor": "presence"
+        }
+      ]
+}

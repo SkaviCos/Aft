@@ -1,0 +1,16 @@
+{
+  "elements": [
+    {
+      "elementName": "PageTitle",
+      "identifier": "xpath",
+      "value": "//android.widget.TextView[contains(@text, 'Send Crypto')]",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "Back",
+      "identifier": "id",
+      "value": "backImageView",
+      "waitFor": "presence"
+    }
+  ]
+}

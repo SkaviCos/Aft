@@ -1,0 +1,76 @@
+{
+  "elements": [
+    {
+      "elementName": "TotalHint",
+      "identifier": "id",
+      "value": "Total balance",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "BankTransfer",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeStaticText[@name='Bank transfer']/ancestor::XCUIElementTypeCell[1]",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "SendCrypto",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeStaticText[@name='Send crypto']/ancestor::XCUIElementTypeCell[1]",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "ReceiveCrypto",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeStaticText[@name='Receive crypto']/ancestor::XCUIElementTypeCell[1]",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "ByyCRPTForCrypto",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeStaticText[@name='Buy CRPT for crypto']/ancestor::XCUIElementTypeCell[1]",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "BuyCRPTForEuro",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeStaticText[@name='Buy CRPT for EUR']/ancestor::XCUIElementTypeCell[1]",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "TopUp",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeStaticText[@name='Top up phone']/ancestor::XCUIElementTypeCell[1]",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "BankTransfers",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeStaticText[@name='Bank transfers']/ancestor::XCUIElementTypeCell[1]",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "BPay",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeStaticText[@name='BPay transfers']/ancestor::XCUIElementTypeCell[1]",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "BetaAlertConfirm",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeStaticText[@name='This feature is currently available to beta-testers only. It will be unlocked in the nearest public release.']",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "KycAlert",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeStaticText[@name='You need to complete the KYC application to access this feature.']",
+      "waitFor": "presence"
+    },
+    {
+      "elementName": "AlertClose",
+      "identifier": "xpath",
+      "value": "//XCUIElementTypeImage[@name='closeCrossBlack']/preceding-sibling::XCUIElementTypeButton[1]",
+      "waitFor": "presence"
+    }
+  ]
+}

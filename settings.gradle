@@ -1,0 +1,25 @@
+
+//
+//include ':optimus'
+//project(':optimus').projectDir = new File("./modules/optimus")
+
+include 'optimus-core'
+project(':optimus-core').projectDir = new File("./modules/optimus/optimus-core")
+
+include ':optimus-commons'
+project(':optimus-commons').projectDir = new File("./modules/optimus/optimus-commons")
+
+include ':optimus-monitor'
+project(':optimus-monitor').projectDir = new File("./modules/optimus/optimus-monitor")
+
+include ':mdb'
+project(':mdb').projectDir = new File("./modules/optimus/mdb")
+
+include ':intents'
+project(':intents').projectDir = new File("./modules/intents")
+
+include ':stepdefs'
+project(':stepdefs').projectDir = new File("./modules/stepdefs")
+
+include ':pagefactory'
+project(':pagefactory').projectDir = new File("./modules/pagefactory")

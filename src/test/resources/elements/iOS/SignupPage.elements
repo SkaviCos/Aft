@@ -1,0 +1,93 @@
+{
+      "elements": [
+//        Common
+        {
+          "elementName": "Next",
+          "identifier": "id",
+          "value": "Next",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "AcceptTerms",
+          "identifier": "id",
+          "value": "checkboxOff",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "CloseButton",
+          "identifier": "xpath",
+          "value": "//XCUIElementTypeImage[@name='closeCrossBlack']/preceding-sibling::XCUIElementTypeButton",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "ContinueButton",
+          "identifier": "id",
+          "value": "Got it",
+          "waitFor": "presence"
+        },
+        //COUNTRY
+        {
+          "elementName": "CountryOfResidence",
+          "identifier": "xpath",
+          "value": "//XCUIElementTypeTextField",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "Country",
+          "identifier": "xpath",
+          "value": "//XCUIElementTypeCell[1]",
+          "waitFor": "presence"
+        },
+        //PHONE
+        {
+          "elementName": "Phone",
+          "identifier": "xpath",
+          "value": "//XCUIElementTypeNavigationBar[@name='Enter your phone number']/following-sibling::XCUIElementTypeOther//XCUIElementTypeTextField",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "VerificationCode",
+          "identifier": "xpath",
+          "value": "//android.widget.EditText[@resource-id='com.crypterium.beta:id/smsCode'] | //XCUIElementTypeStaticText[@name='Please enter it below']/following-sibling::XCUIElementTypeOther[1]",
+          "waitFor": "presence"
+        },
+        //NAME
+        {
+          "elementName": "FirstName",
+          "identifier": "xpath",
+          "value": "(//XCUIElementTypeTextField)[1]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "LastName",
+          "identifier": "xpath",
+          "value": "(//XCUIElementTypeTextField)[2]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "Email",
+          "identifier": "xpath",
+          "value": "//XCUIElementTypeTextField",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "Password",
+          "identifier": "xpath",
+          "value": "(//XCUIElementTypeSecureTextField)[1]",
+          "waitFor": "presence"
+        },
+        {
+          "elementName": "PasswordConfirm",
+          "identifier": "xpath",
+          "value": "(//XCUIElementTypeSecureTextField)[2]",
+          "waitFor": "presence"
+        },
+        //SUCCESS
+        {
+          "elementName": "Finish",
+          "identifier": "id",
+          "value": "Finish",
+          "waitFor": "presence"
+        }
+      ]
+}
