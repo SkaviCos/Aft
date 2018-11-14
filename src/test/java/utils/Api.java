@@ -33,7 +33,8 @@ public class Api {
         Response r = mobile("/countries");
         CountryItem[] allCountries = r.as(CountryItem[].class);
         List<CountryItem> countries = Arrays.stream(allCountries)
-                .filter(c -> c.getHasCryptoRestrictions().equals(isRestricted)).collect(Collectors.toList());
+                .filter(c -> c.getHasCryptoRestrictions().equals(isRestricted))
+                .filter(c -> !c.getName().contains(" ")).collect(Collectors.toList());
         if (countries.isEmpty()) {
             return new CountryItem();
         } else {

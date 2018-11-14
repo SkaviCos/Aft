@@ -1,6 +1,7 @@
 @registration @smoke @QA-22
 Feature: Registration
 
+  @QA-22_1
   Scenario: Sign Up - country from whitelist
 
     Given user on local Stash put "User phone number" value "Api -> Free phone number"
@@ -37,6 +38,7 @@ Feature: Registration
     Then user on SignupPage screen verifies Finish is displayed
     And user on SignupPage screen taps on Finish
 
+  @QA-22_2
   Scenario: Sign Up - country from blacklist
     When user on AuthPage screen taps on SignUp
     Then user on SignupPage screen verifies CountryOfResidence is displayed

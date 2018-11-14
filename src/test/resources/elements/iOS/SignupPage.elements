@@ -16,13 +16,13 @@
         {
           "elementName": "CloseButton",
           "identifier": "xpath",
-          "value": "//android.widget.ImageButton[@resource-id='com.crypterium.beta:id/close']",
+          "value": "//XCUIElementTypeImage[@name='closeCrossBlack']/preceding-sibling::XCUIElementTypeButton",
           "waitFor": "presence"
         },
         {
           "elementName": "ContinueButton",
-          "identifier": "xpath",
-          "value": "//android.widget.Button[@text='Continue']",
+          "identifier": "id",
+          "value": "Got it",
           "waitFor": "presence"
         },
         //COUNTRY
@@ -42,7 +42,7 @@
         {
           "elementName": "Phone",
           "identifier": "xpath",
-          "value": "//XCUIElementTypeTextField[1]",
+          "value": "//XCUIElementTypeNavigationBar[@name='Enter your phone number']/following-sibling::XCUIElementTypeOther//XCUIElementTypeTextField",
           "waitFor": "presence"
         },
         {
@@ -83,12 +83,6 @@
           "waitFor": "presence"
         },
         //SUCCESS
-        {
-          "elementName": "Success",
-          "identifier": "xpath",
-          "value": "android.widget.TextView[@text='Now you can start using the most advanced payment solutions on the market.']",
-          "waitFor": "presence"
-        },
         {
           "elementName": "Finish",
           "identifier": "id",
