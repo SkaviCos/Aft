@@ -24,9 +24,9 @@ import java.util.NoSuchElementException;
 
 public class BasePage {
 
-    private AppiumDriver driver;
-    private WebDriverWait wait;
-    private String user;
+    protected AppiumDriver driver;
+    protected WebDriverWait wait;
+    protected String user;
 
     public BasePage(AppiumDriver driver, String user) {
         this.driver = driver;
